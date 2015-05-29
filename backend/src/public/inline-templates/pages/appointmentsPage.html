@@ -1,2 +1,14 @@
-<div data-ng-controller="appointmentCtrl">
+<div data-ng-controller="appointmentCtrl" class="cal-calendar">
+    <div ng-repeat="date in dates track by $index" class="cal-date">
+        <div class="cal-date-text">
+            <div>{{date}}</div>
+        </div>
+        <div class="cal-event cal-event-sm"></div>
+        <div class="cal-event cal-event-md"></div>
+        <div class="cal-event cal-event-lg"></div>
+        <div class="cal-event cal-event-xxl"></div>
+        <div class="cal-event cal-event-xl"></div>
+        <div class="cal-event cal-event-xxl"></div>
+        <div class="cal-event cal-event-sm"></div>
+    </div>
 </div>

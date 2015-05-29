@@ -1,4 +1,4 @@
-cal.directive('cshdAppointment', function () {
+cal.directive('calAppointment', function () {
 
     return {
         restrict: 'A',

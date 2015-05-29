@@ -38,21 +38,32 @@
 <body data-ng-app="cal">
 
 <!-- Begin Templates -->
-<script type="text/ng-template" id="/inline-templates/dirs/appointmentsDir.html">
+<script type="text/ng-template" id="/inline-templates/dirs/appointmentDir.html">
 appointment
 </script>
 
 <script type="text/ng-template" id="/inline-templates/pages/appointmentsPage.html">
-<div data-ng-controller="appointmentCtrl">
+<div data-ng-controller="appointmentCtrl" class="cal-calendar">
+    <div ng-repeat="date in dates track by $index" class="cal-date">
+        <div class="cal-date-text">
+            <div>{{date}}</div>
+        </div>
+        <div class="cal-event cal-event-sm"></div>
+        <div class="cal-event cal-event-md"></div>
+        <div class="cal-event cal-event-lg"></div>
+        <div class="cal-event cal-event-xxl"></div>
+        <div class="cal-event cal-event-xl"></div>
+        <div class="cal-event cal-event-xxl"></div>
+        <div class="cal-event cal-event-sm"></div>
+    </div>
 </div>
 </script>
 <!-- End Templates -->
 
 
 <div>
-        <div data-ng-view=""></div>
-    </div>
-
+    <div data-ng-view=""></div>
+</div>
 
 <!-- injector:js -->
 <script src="vendor/jquery/jquery.min.js"></script>
