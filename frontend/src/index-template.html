@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Hairstylist</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <script>
+        // Add supported languages
+        CAL_LANG = {
+            DE: "<%- deLangHash %>",
+            EN: "<%- enLangHash %>",
+            SR: "<%- srLangHash %>"
+        };
+    </script>
+    <!-- TODO: uncomment when application favicon is created
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    -->
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- injector:css -->
+    <!-- endinjector -->
+
+
+</head>
+
+<body data-ng-app="cal">
+<div>
+        <div data-ng-view></div>
+    </div>
+</div>
+
+<!-- injector:js -->
+<!-- endinjector -->
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+{
+    "name": "CAL-FE",
+    "version": "0.0.1",
+    "description": "Calendar frontend",
+    "private": true,
+    "devDependencies": {
+        "grunt": "",
+        "grunt-cli": "",
+        "grunt-contrib-clean": "",
+        "grunt-contrib-jshint": "~0.10.0",
+        "grunt-contrib-concat": "",
+        "grunt-injector": "~0.5.2",
+        "grunt-contrib-cssmin": "~0.10.0",
+        "grunt-ngmin": "",
+        "grunt-contrib-uglify": "",
+        "grunt-contrib-copy": "~0.5.0",
+        "grunt-contrib-watch": "",
+        "grunt-template": "",
+        "checksum": "",
+        "grunt-inline-angular-templates": ""
+    },
+    "scripts": {
+        "preupdate-webdriver": "npm install",
+        "update-webdriver": "webdriver-manager update",
+        "preprotractor": "npm run update-webdriver"
+    }
+}

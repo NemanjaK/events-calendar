@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Hairstylist</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script>
+        // Add supported languages
+        CAL_LANG = {
+            DE: "dc2068a20ad7ddace214d1674e681ab396c5b103",
+            EN: "905262db20ff6806953114ce643ce7407dfc24bd",
+            SR: "b8018eedc072f3561df6cff23d60286cbcebdba7"
+        };
+    </script>
+    <!-- TODO: uncomment when application favicon is created
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    -->
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- injector:css -->
+    <link rel="stylesheet" href="vendor/angular/angular-csp.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="vendor/nvd3/nv.d3.min.css">
+    <link rel="stylesheet" href="css/bootstrap-fixes.css">
+    <link rel="stylesheet" href="css/cal.css">
+    <!-- endinjector -->
+
+
+</head>
+
+<body data-ng-app="cal">
+
+<!-- Begin Templates -->
+<script type="text/ng-template" id="/inline-templates/dirs/appointmentsDir.html">
+appointment
+</script>
+
+<script type="text/ng-template" id="/inline-templates/pages/appointmentsPage.html">
+<div data-ng-controller="appointmentCtrl">
+</div>
+</script>
+<!-- End Templates -->
+
+
+<div>
+        <div data-ng-view=""></div>
+    </div>
+
+
+<!-- injector:js -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+<script src="vendor/jquery-mousewheel/jquery.mousewheel.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/angular/angular.min.js"></script>
+<script src="vendor/angular/angular-animate.min.js"></script>
+<script src="vendor/angular/angular-loader.min.js"></script>
+<script src="vendor/angular/angular-resource.min.js"></script>
+<script src="vendor/angular/angular-route.min.js"></script>
+<script src="vendor/angular/angular-messages.min.js"></script>
+<script src="vendor/touchPunch/touch-punch.min.js"></script>
+<script src="vendor/angular-dnd/dnd.min.js"></script>
+<script src="vendor/angular-translate/angular-translate.min.js"></script>
+<script src="vendor/angular-local-storage/angular-local-storage.min.js"></script>
+<script src="vendor/angular-sortable/angular_sortable.js"></script>
+<script src="vendor/d3/d3.min.js"></script>
+<script src="vendor/nvd3/nv.d3.min.js"></script>
+<script src="vendor/angular-nvd3/angularjs-nvd3-directives.min.js"></script>
+<script src="vendor/ui-bootstrap/ui-bootstrap-tpls-0.11.2.min.js"></script>
+<script src="js/config/config.js"></script>
+<script src="js/ctrls/appointmentCtrl.js"></script>
+<script src="js/dirs/appointmentDir.js"></script>
+<script src="js/factory/alertFactory.js"></script>
+<script src="js/factory/translationLoaderFactory.js"></script>
+<script src="js/filters/dateConverterFilter.js"></script>
+<script src="js/interceptors/httpInterceptor.js"></script>
+<script src="js/services/appointmentService.js"></script>
+<!-- endinjector -->
+
+</body>
+
+</html>

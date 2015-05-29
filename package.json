@@ -1,0 +1,19 @@
+{
+  "name": "CAL-BASE",
+  "version": "0.0.1",
+  "description": "Calendar",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "grunt": "",
+    "grunt-cli": "",
+    "grunt-exec": "",
+    "grunt-prompt": "",
+    "grunt-template": "",
+    "grunt-contrib-copy": "",
+    "grunt-contrib-clean": "",
+    "grunt-contrib-rename": "",
+    "grunt-file-creator": ""
+  }
+}

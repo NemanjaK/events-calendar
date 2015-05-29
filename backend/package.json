@@ -1,0 +1,12 @@
+{
+    "name": "express",
+    "version": "0.0.1",
+    "description": "Calc backend express",
+    "private": true,
+    "dependencies": {
+        "express": "*"
+    },
+    "scripts": {
+        "preinstall": "npm install -g express-generator@3"
+    }
+}

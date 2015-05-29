@@ -1,0 +1,8 @@
+{
+  "engine": "mysql",
+  "host": "localhost",
+  "database": "cshd",
+  "port": "3306",
+  "username": "root",
+  "password": ""
+}

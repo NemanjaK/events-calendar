@@ -1,0 +1,11 @@
+<a class="cshd-customer-typeahead row">
+    <div class="col-md-2 col-sm-2 col-xs-2 text-center  cshd-image">
+        <div class="cshd-center-container">
+            <div class="glyphicon glyphicon-user img-circle cshd-vertical-align"></div>
+        </div>
+    </div>
+    <div class="container col-md-10 col-sm-10 col-xs-10">
+        <div class="cshd-bold cshd-ellipsis">{{match.model.firstName}} {{match.model.lastName}}</div>
+        <div class="cshd-lite small cshd-ellipsis">{{match.model.email || match.model.phone}}</div>
+    </div>
+</a>
