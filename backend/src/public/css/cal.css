@@ -1,7 +1,8 @@
 .cal-calendar {
+    top: 60px;
+    bottom: 60px;
     width: 100%;
-    height: 100%;
-    background-color: #ffffff;
+    background-color: #F2F2F2;
     position: absolute;
 }
 .cal-date {
@@ -34,6 +35,22 @@
     vertical-align: middle;
 }
 
+.cal-header {
+    width: 100%;
+    height: 60px;
+    top: 0;
+    position: fixed;
+    background-color: #F2F2F2;
+}
+
+.cal-footer {
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    position: fixed;
+    background-color: #F2F2F2;
+}
+
 .cal-event {
     height: 19%;
     margin-bottom: 1%;
@@ -41,6 +58,19 @@
     box-sizing: border-box;
     border-left: 2px solid white;
 }
+
+.cal-text {
+    color: #333333;
+}
+
+.cal-link {
+    cursor: pointer;
+}
+
+.cal-link:hover {
+    text-decoration: underline;
+}
+
 
 .cal-event-sm {
     width: 20%;

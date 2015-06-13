@@ -1,4 +1,4 @@
-cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFactory, translationFactory, colorFactory, eventsService) {
+cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, $location, dateUtilFactory, daysFactory, translationFactory, colorFactory, eventsService) {
 
 
     console.log($routeParams);
@@ -7,25 +7,51 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFacto
 
     translationFactory.change(lang);
 
-    var day = $routeParams.date? new Date($routeParams.date) : new Date() || new Date();
+    $scope.currentDay = $routeParams.date ? new Date($routeParams.date) : new Date() || new Date();
 
 
-    if($routeParams.date && !isNaN(Date.parse($routeParams.date))) {
+    if ($routeParams.date && !isNaN(Date.parse($routeParams.date))) {
 
-        day = new Date($routeParams.date);
+        $scope.currentDay = new Date($routeParams.date);
 
     } else {
-        day = new  Date();
+        $scope.currentDay = new Date();
 
     }
 
-    console.log(day);
+    console.log($scope.currentDay);
 
 
-    $scope.days = daysFactory.getDaysForMonth(day);
+    $scope.days = daysFactory.getDaysForMonth($scope.currentDay);
+
+    $scope.dp3 = {};
+
+    $scope.move = function (dt) {
+        $scope.currentDay = dateUtilFactory.move($scope.currentDay, dt);
+    };
+
+    $scope.today = function () {
+        $scope.currentDay = new Date();
+    };
+
+    $scope.$watch(function () {
+        return $scope.currentDay;
+    }, function (newValue) {
+        if(newValue) {
+            $location.path('/' + lang + '/' + dateUtilFactory.formatDate($scope.currentDay));
+        }
+    });
 
 
-    $scope.openDialog = function ($event, day, event){
+    var openPicker = $scope.openPicker = function ($event, dp) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        dp.opened = !dp.opened;
+    };
+
+
+    $scope.openDialog = function ($event, day, event) {
 
         $event.preventDefault();
         $event.stopPropagation();
@@ -39,7 +65,7 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFacto
 
                     $scope.mode = !!event;
 
-                    if($scope.mode) {
+                    if ($scope.mode) {
                         $scope.event = {
                             id: event.id,
                             title: event.title,
@@ -52,26 +78,21 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFacto
                     } else {
                         var color = colorFactory.getUnUsedColor(day.events, colorFactory.getAllDarkColors());
                         $scope.event = {
-                            start : day.date,
-                            end : day.date,
+                            start: day.date,
+                            end: day.date,
                             time: new Date(),
                             colors: colorFactory.getColors(color)
                         };
                     }
 
-                    $scope.openPicker = function($event, dp) {
-                        $event.preventDefault();
-                        $event.stopPropagation();
+                    $scope.openPicker = openPicker;
 
-                        dp.opened = !dp.opened;
-                    };
-
-                    $scope.create = function (form){
+                    $scope.create = function (form) {
                         form.$setPristine();
-                        eventsService.edit($scope.event).then(function (){
-                            if($scope.mode) {
-                                for(var i=day.events.length - 1; i>=0; i--){
-                                    if(day.events[i].id == $scope.event.id){
+                        eventsService.edit($scope.event).then(function () {
+                            if ($scope.mode) {
+                                for (var i = day.events.length - 1; i >= 0; i--) {
+                                    if (day.events[i].id == $scope.event.id) {
                                         day.events.splice(i, 1);
                                     }
                                 }
@@ -82,12 +103,12 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFacto
                             day.events = events;
                             $modalInstance.close();
 
-                        }).catch(function (){
+                        }).catch(function () {
                             form.$setDirty();
                         });
                     };
 
-                    $scope.cancel = function (){
+                    $scope.cancel = function () {
                         $modalInstance.dismiss('cancel');
                     };
                 }]

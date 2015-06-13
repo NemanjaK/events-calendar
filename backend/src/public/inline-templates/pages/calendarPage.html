@@ -1,4 +1,22 @@
 <div data-ng-controller="calendarCtrl" class="cal-calendar">
+    <div class="cal-header">
+        <div class="navbar-brand text-right">
+            <button type="button" class="btn btn-sm btn-default cal-text" data-ng-click="today()" data-ng-cloak><strong>{{ 'tt_today' | translate }}</strong></button>
+            <span class="cal-link" data-ng-click="openPicker($event, dp3)"><small>{{currentDay | date:'dd. MM. yyyy'}}</small></span>
+            <button type="button" class="btn btn-sm btn-default cal-text" data-ng-click="move(-1)" data-ng-cloak>
+                <i class="glyphicon glyphicon-chevron-left"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-default cal-text" data-ng-click="move(1)" data-ng-cloak>
+                <i class="glyphicon glyphicon-chevron-right"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-default cal-text" data-ng-click="showHideSidebar()" data-ng-cloak>
+                <i class="glyphicon glyphicon-cog"></i>
+            </button>
+        </div>
+        <div class="text-right">
+            <datepicker data-ng-model="currentDay" show-weeks="false" data-ng-show="dp3.opened" class="well well-sm"  style="display: inline-block"></datepicker>
+        </div>
+    </div>
     <div ng-repeat="day in days"
          ng-click="openDialog($event, day)"
          class="cal-date {{day.isCurrentMonth? '' : 'cal-not-current-month'}}">
@@ -15,4 +33,5 @@
 
         </div>
     </div>
+    <div class="cal-footer"></div>
 </div>

@@ -12,3 +12,7 @@ input, textarea {
 textarea {
     resize: none;
 }
+
+.navbar-brand{
+    width: 100%;
+}
