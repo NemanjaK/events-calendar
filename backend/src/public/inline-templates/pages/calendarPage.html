@@ -1,11 +1,12 @@
 <div data-ng-controller="calendarCtrl" class="cal-calendar">
     <div ng-repeat="day in days"
-         ng-click="openDialog(day)"
+         ng-click="openDialog($event, day)"
          class="cal-date {{day.isCurrentMonth? '' : 'cal-not-current-month'}}">
         <div class="cal-date-text">
             <div>{{day.d}}</div>
         </div>
         <div ng-repeat="event in day.events"
+             ng-click="openDialog($event, day, event)"
              class="cal-event"
              cal-event=""
              data-cal-attr-index="$index"

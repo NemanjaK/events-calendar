@@ -1,6 +1,6 @@
 <form name="form">
     <div class="modal-header">
-        <label>Create event</label>
+        <label>{{mode? 'Edit event' : 'Create event'}}</label>
     </div>
     <div class="modal-body">
         <div class="row">
@@ -66,7 +66,7 @@
 
     </div>
     <div class="modal-footer">
-        <button class="btn btn-success pull-left" data-ng-click="create()">Create</button>
+        <button class="btn btn-success pull-left" ng-disabled="!event.title || !event.start || form.$pristine" data-ng-click="create()">{{mode? 'Edit' : 'Create'}}</button>
         <button class="btn btn-default" data-ng-click="cancel()">Cancel</button>
     </div>
 </form>

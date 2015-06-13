@@ -41,7 +41,7 @@
 <script type="text/ng-template" id="/inline-templates/dialogs/eventDialog.html">
 <form name="form">
     <div class="modal-header">
-        <label>Create event</label>
+        <label>{{mode? 'Edit event' : 'Create event'}}</label>
     </div>
     <div class="modal-body">
         <div class="row">
@@ -107,7 +107,7 @@
 
     </div>
     <div class="modal-footer">
-        <button class="btn btn-success pull-left" data-ng-click="create()">Create</button>
+        <button class="btn btn-success pull-left" ng-disabled="!event.title || !event.start || form.$pristine" data-ng-click="create()">{{mode? 'Edit' : 'Create'}}</button>
         <button class="btn btn-default" data-ng-click="cancel()">Cancel</button>
     </div>
 </form>
@@ -121,12 +121,13 @@ appointment
 <script type="text/ng-template" id="/inline-templates/pages/calendarPage.html">
 <div data-ng-controller="calendarCtrl" class="cal-calendar">
     <div ng-repeat="day in days"
-         ng-click="openDialog(day)"
+         ng-click="openDialog($event, day)"
          class="cal-date {{day.isCurrentMonth? '' : 'cal-not-current-month'}}">
         <div class="cal-date-text">
             <div>{{day.d}}</div>
         </div>
         <div ng-repeat="event in day.events"
+             ng-click="openDialog($event, day, event)"
              class="cal-event"
              cal-event=""
              data-cal-attr-index="$index"
@@ -170,7 +171,7 @@ appointment
 <script src="js/factory/translationLoaderFactory.js"></script>
 <script src="js/filters/dateConverterFilter.js"></script>
 <script src="js/interceptors/httpInterceptor.js"></script>
-<script src="js/services/appointmentService.js"></script>
+<script src="js/services/eventsService.js"></script>
 <!-- endinjector -->
 
 </body>
