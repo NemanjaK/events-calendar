@@ -1,7 +1,11 @@
-cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFactory, colorFactory, eventsService) {
+cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFactory, translationFactory, colorFactory, eventsService) {
 
 
     console.log($routeParams);
+
+    var lang = ($routeParams.lang || 'en').toLowerCase();
+
+    translationFactory.change(lang);
 
     var day = $routeParams.date? new Date($routeParams.date) : new Date() || new Date();
 

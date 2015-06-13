@@ -1,4 +1,6 @@
 {
+    "tt_description": "Opis",
+    "tt_title": "Naslov",
     "tt_error_wrong_format": "Pogrešan format",
     "tt_error_invalid_old_pass": "Pogrešna stara lozinka",
     "tt_no_data_available": "Nema podataka",

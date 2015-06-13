@@ -1,4 +1,6 @@
 {
+    "tt_description": "Beschreibung",
+    "tt_title": "Titel",
     "tt_error_wrong_format": "tt_error_wrong_format",
     "tt_error_invalid_old_pass": "tt_error_invalid_old_pass",
     "tt_no_data_available": "tt_no_data_available",

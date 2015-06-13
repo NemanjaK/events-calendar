@@ -1,4 +1,4 @@
-cal.factory('calTranslationsLoader', function ($q, $http, localStorageService) {
+cal.factory('calTranslationsLoaderService', function ($q, $http, localStorageService) {
 
     return function (options) {
         var deferred = $q.defer();

@@ -36,13 +36,16 @@ cal.config(
 
         localStorageServiceProvider.setPrefix('cal');
 
-        $translateProvider.useLoader('calTranslationsLoader');
+        $translateProvider.useLoader('calTranslationsLoaderService');
 
         $routeProvider
             .when('/', {
                 templateUrl: '/inline-templates/pages/calendarPage.html'
             })
-            .when('/:date', {
+            .when('/:lang', {
+                templateUrl: '/inline-templates/pages/calendarPage.html'
+            })
+            .when('/:lang/:date', {
                 templateUrl: '/inline-templates/pages/calendarPage.html'
             })
             .otherwise({

@@ -1,4 +1,6 @@
 {
+    "tt_description": "Description",
+    "tt_title": "Title",
     "tt_error_wrong_format": "Wrong format",
     "tt_error_invalid_old_pass": "Wrong old password",
     "tt_no_data_available": "No data available",

@@ -1,11 +1,11 @@
 <form name="form">
     <div class="modal-header">
-        <label>{{mode? 'Edit event' : 'Create event'}}</label>
+        <label>{{(mode? 'tt_edit' : 'tt_create' ) | translate }}</label>
     </div>
     <div class="modal-body">
         <div class="row">
             <div class="col-md-12">
-                <input type="text" class="form-control" ng-model="event.title" placeholder="Event title"/>
+                <input type="text" class="form-control" ng-model="event.title" placeholder="{{'tt_title' | translate }}"/>
             </div>
         </div>
         <br/>
@@ -21,7 +21,7 @@
                            is-open="dp1.opened"
                            show-weeks="false"
                            ng-required="true"
-                           placeholder="Start date"/>
+                           placeholder="{{'tt_start_date' | translate }}"/>
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default">
                             <i class="glyphicon glyphicon-calendar"></i>
@@ -42,7 +42,7 @@
                            is-open="dp2.opened"
                            show-weeks="false"
                            ng-required="true"
-                           placeholder="End date"/>
+                           placeholder="{{'tt_end_date' | translate }}"/>
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default">
                             <i class="glyphicon glyphicon-calendar"></i>
@@ -60,13 +60,13 @@
 
         <div class="row">
             <div class="col-md-12">
-                <textarea class="form-control" ng-model="event.desc" placeholder="Event description"></textarea>
+                <textarea class="form-control" ng-model="event.desc" placeholder="{{'tt_description' | translate }}"></textarea>
             </div>
         </div>
 
     </div>
     <div class="modal-footer">
-        <button class="btn btn-success pull-left" ng-disabled="!event.title || !event.start || form.$pristine" data-ng-click="create(form)">{{mode? 'Edit' : 'Create'}}</button>
-        <button class="btn btn-default" data-ng-click="cancel()">Cancel</button>
+        <button class="btn btn-success pull-left" ng-disabled="!event.title || !event.start || form.$pristine" data-ng-click="create(form)">{{(mode? 'tt_edit' : 'tt_create' ) | translate }}</button>
+        <button class="btn btn-default" data-ng-click="cancel()">{{ 'tt_cancel' | translate }}</button>
     </div>
 </form>
