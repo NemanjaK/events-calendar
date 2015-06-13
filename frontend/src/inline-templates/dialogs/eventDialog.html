@@ -1,0 +1,72 @@
+<form name="form">
+    <div class="modal-header">
+        <label>Create event</label>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" class="form-control" ng-model="event.title" placeholder="Event title"/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group"
+                     ng-init="dp1.opened = false;"
+                     ng-click="openPicker($event, dp1)">
+                    <input type="text" class="form-control"
+                           datepicker-popup
+                           show-button-bar="false"
+                           ng-model="event.start"
+                           is-open="dp1.opened"
+                           show-weeks="false"
+                           ng-required="true"
+                           placeholder="Start date"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group" ng-init="dp2.opened = false;"
+                     ng-click="openPicker($event, dp2)">
+                    <input type="text" class="form-control"
+                           datepicker-popup
+                           show-button-bar="false"
+                           ng-model="event.end"
+                           is-open="dp2.opened"
+                           show-weeks="false"
+                           ng-required="true"
+                           placeholder="End date"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <timepicker ng-model="event.time" hour-step="1" minute-step="1" show-meridian="true"></timepicker>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <textarea class="form-control" ng-model="event.desc" placeholder="Event description"></textarea>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success pull-left" data-ng-click="create()">Create</button>
+        <button class="btn btn-default" data-ng-click="cancel()">Cancel</button>
+    </div>
+</form>

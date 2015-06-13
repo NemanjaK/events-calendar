@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Hairstylist</title>
+    <title>Event calendar</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -38,22 +38,101 @@
 <body data-ng-app="cal">
 
 <!-- Begin Templates -->
+<script type="text/ng-template" id="/inline-templates/dialogs/eventDialog.html">
+<form name="form">
+    <div class="modal-header">
+        <label>Create event</label>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" class="form-control" ng-model="event.title" placeholder="Event title"/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group"
+                     ng-init="dp1.opened = false;"
+                     ng-click="openPicker($event, dp1)">
+                    <input type="text" class="form-control"
+                           datepicker-popup
+                           show-button-bar="false"
+                           ng-model="event.start"
+                           is-open="dp1.opened"
+                           show-weeks="false"
+                           ng-required="true"
+                           placeholder="Start date"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group" ng-init="dp2.opened = false;"
+                     ng-click="openPicker($event, dp2)">
+                    <input type="text" class="form-control"
+                           datepicker-popup
+                           show-button-bar="false"
+                           ng-model="event.end"
+                           is-open="dp2.opened"
+                           show-weeks="false"
+                           ng-required="true"
+                           placeholder="End date"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <timepicker ng-model="event.time" hour-step="1" minute-step="1" show-meridian="true"></timepicker>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <textarea class="form-control" ng-model="event.desc" placeholder="Event description"></textarea>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success pull-left" data-ng-click="create()">Create</button>
+        <button class="btn btn-default" data-ng-click="cancel()">Cancel</button>
+    </div>
+</form>
+
+</script>
+
 <script type="text/ng-template" id="/inline-templates/dirs/appointmentDir.html">
 appointment
 </script>
 
 <script type="text/ng-template" id="/inline-templates/pages/calendarPage.html">
 <div data-ng-controller="calendarCtrl" class="cal-calendar">
-    <div ng-repeat="day in days track by $index" class="cal-date">
+    <div ng-repeat="day in days"
+         ng-click="openDialog(day)"
+         class="cal-date {{day.isCurrentMonth? '' : 'cal-not-current-month'}}">
         <div class="cal-date-text">
-            <div>{{day}}</div>
+            <div>{{day.d}}</div>
         </div>
-        <div class="cal-event cal-event-sm"></div>
-        <div class="cal-event cal-event-md"></div>
-        <div class="cal-event cal-event-sm"></div>
-        <div class="cal-event cal-event-lg"></div>
-        <div class="cal-event cal-event-xl"></div>
-        <div class="cal-event cal-event-sm"></div>
+        <div ng-repeat="event in day.events"
+             class="cal-event"
+             cal-event=""
+             data-cal-attr-index="$index"
+             data-cal-attr-total="day.events.length">
+
+        </div>
     </div>
 </div>
 </script>
@@ -83,9 +162,10 @@ appointment
 <script src="vendor/d3/d3.min.js"></script>
 <script src="vendor/nvd3/nv.d3.min.js"></script>
 <script src="vendor/angular-nvd3/angularjs-nvd3-directives.min.js"></script>
-<script src="vendor/ui-bootstrap/ui-bootstrap-tpls-0.11.2.min.js"></script>
+<script src="vendor/ui-bootstrap/ui-bootstrap-tpls-0.13.0.min.js"></script>
 <script src="js/config/config.js"></script>
 <script src="js/ctrls/calendarCtrl.js"></script>
+<script src="js/dirs/eventDir.js"></script>
 <script src="js/factory/daysFactory.js"></script>
 <script src="js/factory/translationLoaderFactory.js"></script>
 <script src="js/filters/dateConverterFilter.js"></script>

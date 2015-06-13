@@ -35,7 +35,7 @@ module.exports = function (grunt) {
         '../src/vendor/d3/d3.min.js',
         '../src/vendor/nvd3/nv.d3.min.js',
         '../src/vendor/angular-nvd3/angularjs-nvd3-directives.min.js',
-        '../src/vendor/ui-bootstrap/ui-bootstrap-tpls-0.11.2.min.js'
+        '../src/vendor/ui-bootstrap/ui-bootstrap-tpls-0.13.0.min.js'
     ];
     var vendorCssDep = [
         '../src/vendor/angular/angular-csp.css',

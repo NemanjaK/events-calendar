@@ -1,13 +1,16 @@
 <div data-ng-controller="calendarCtrl" class="cal-calendar">
-    <div ng-repeat="day in days track by $index" class="cal-date">
+    <div ng-repeat="day in days"
+         ng-click="openDialog(day)"
+         class="cal-date {{day.isCurrentMonth? '' : 'cal-not-current-month'}}">
         <div class="cal-date-text">
-            <div>{{day}}</div>
+            <div>{{day.d}}</div>
         </div>
-        <div class="cal-event cal-event-sm"></div>
-        <div class="cal-event cal-event-md"></div>
-        <div class="cal-event cal-event-sm"></div>
-        <div class="cal-event cal-event-lg"></div>
-        <div class="cal-event cal-event-xl"></div>
-        <div class="cal-event cal-event-sm"></div>
+        <div ng-repeat="event in day.events"
+             class="cal-event"
+             cal-event=""
+             data-cal-attr-index="$index"
+             data-cal-attr-total="day.events.length">
+
+        </div>
     </div>
 </div>
