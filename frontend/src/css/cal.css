@@ -13,8 +13,8 @@
 }
 
 .cal-date-text {
-    width: 33.33%;
-    height: 33.33%;
+    width: 20%;
+    height: 20%;
     background-color: #1c94c4;
     font-weight: 100;
     display: table;
@@ -29,29 +29,26 @@
 }
 
 .cal-event {
-    height: 16.66%;
+    height: 19%;
+    margin-bottom: 1%;
     float: left;
 }
 
 .cal-event-sm {
     background-color: limegreen;
-    width: 16.66%;
+    width: 20%;
 }
 
 .cal-event-md {
     background-color: #CC0000;
-    width: 33.33%;
+    width: 40%;
 }
 
 .cal-event-lg {
-    background-color: #ffff00;
-    width: 66.66%;
+    background-color: hotpink;
+    width: 80%;
 }
 .cal-event-xl {
-    background-color: hotpink;
-    width: 50%;
-}
-.cal-event-xxl {
     background-color: orange;
     width: 100%;
 }

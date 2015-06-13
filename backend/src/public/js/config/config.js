@@ -40,7 +40,10 @@ cal.config(
 
         $routeProvider
             .when('/', {
-                templateUrl: '/inline-templates/pages/appointmentsPage.html'
+                templateUrl: '/inline-templates/pages/calendarPage.html'
+            })
+            .when('/:date', {
+                templateUrl: '/inline-templates/pages/calendarPage.html'
             })
             .otherwise({
                 redirectTo: '/'

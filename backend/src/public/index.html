@@ -42,18 +42,17 @@
 appointment
 </script>
 
-<script type="text/ng-template" id="/inline-templates/pages/appointmentsPage.html">
-<div data-ng-controller="appointmentCtrl" class="cal-calendar">
-    <div ng-repeat="date in dates track by $index" class="cal-date">
+<script type="text/ng-template" id="/inline-templates/pages/calendarPage.html">
+<div data-ng-controller="calendarCtrl" class="cal-calendar">
+    <div ng-repeat="day in days track by $index" class="cal-date">
         <div class="cal-date-text">
-            <div>{{date}}</div>
+            <div>{{day}}</div>
         </div>
         <div class="cal-event cal-event-sm"></div>
         <div class="cal-event cal-event-md"></div>
+        <div class="cal-event cal-event-sm"></div>
         <div class="cal-event cal-event-lg"></div>
-        <div class="cal-event cal-event-xxl"></div>
         <div class="cal-event cal-event-xl"></div>
-        <div class="cal-event cal-event-xxl"></div>
         <div class="cal-event cal-event-sm"></div>
     </div>
 </div>
@@ -86,9 +85,8 @@ appointment
 <script src="vendor/angular-nvd3/angularjs-nvd3-directives.min.js"></script>
 <script src="vendor/ui-bootstrap/ui-bootstrap-tpls-0.11.2.min.js"></script>
 <script src="js/config/config.js"></script>
-<script src="js/ctrls/appointmentCtrl.js"></script>
-<script src="js/dirs/appointmentDir.js"></script>
-<script src="js/factory/alertFactory.js"></script>
+<script src="js/ctrls/calendarCtrl.js"></script>
+<script src="js/factory/daysFactory.js"></script>
 <script src="js/factory/translationLoaderFactory.js"></script>
 <script src="js/filters/dateConverterFilter.js"></script>
 <script src="js/interceptors/httpInterceptor.js"></script>
