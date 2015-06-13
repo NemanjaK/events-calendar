@@ -16,3 +16,7 @@ textarea {
 .navbar-brand{
     width: 100%;
 }
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: 0px;
+}

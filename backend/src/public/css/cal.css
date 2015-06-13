@@ -59,6 +59,10 @@
     border-left: 2px solid white;
 }
 
+.cal-nav-dropdown {
+    margin-left: 5px;
+}
+
 .cal-text {
     color: #333333;
 }

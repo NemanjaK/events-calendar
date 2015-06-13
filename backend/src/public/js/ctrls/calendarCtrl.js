@@ -30,8 +30,16 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, $location
         $scope.currentDay = dateUtilFactory.move($scope.currentDay, dt);
     };
 
+    $scope.status = {
+        isopen: false
+    };
+
     $scope.today = function () {
         $scope.currentDay = new Date();
+    };
+
+    $scope.changeLanguage = function (lang){
+        $location.path('/' + lang + '/' + dateUtilFactory.formatDate($scope.currentDay));
     };
 
     $scope.$watch(function () {

@@ -130,9 +130,26 @@ appointment
             <button type="button" class="btn btn-sm btn-default cal-text" data-ng-click="move(1)" data-ng-cloak>
                 <i class="glyphicon glyphicon-chevron-right"></i>
             </button>
-            <button type="button" class="btn btn-sm btn-default cal-text" data-ng-click="showHideSidebar()" data-ng-cloak>
-                <i class="glyphicon glyphicon-cog"></i>
-            </button>
+
+            <div class="navbar-right cal-nav-dropdown" dropdown is-open="status.isopen">
+                <button type="button" class="btn btn-sm btn-default cal-text" dropdown-toggle data-ng-cloak>
+                    <i class="glyphicon glyphicon-cog"></i>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="text-center">
+                        <button type="button" class="btn btn-sm btn-default cal-text" data-ng-click="changeLanguage('en')" data-ng-cloak>
+                            <strong>EN</strong>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-default cal-text" data-ng-click="changeLanguage('de')" data-ng-cloak>
+                            <strong>DE</strong>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-default cal-text" data-ng-click="changeLanguage('sr')" data-ng-cloak>
+                            <strong>SR</strong>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
         </div>
         <div class="text-right">
             <datepicker data-ng-model="currentDay" show-weeks="false" data-ng-show="dp3.opened" class="well well-sm"  style="display: inline-block"></datepicker>
