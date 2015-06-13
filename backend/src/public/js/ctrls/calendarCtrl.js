@@ -1,4 +1,4 @@
-cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFactory, eventsService) {
+cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFactory, colorFactory, eventsService) {
 
 
     console.log($routeParams);
@@ -35,8 +35,6 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFacto
 
                     $scope.mode = !!event;
 
-                    console.log($scope.mode);
-
                     if($scope.mode) {
                         $scope.event = {
                             id: event.id,
@@ -44,13 +42,16 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFacto
                             start: event.start,
                             end: event.end,
                             time: event.time,
-                            desc: event.desc
+                            desc: event.desc,
+                            colors: event.colors
                         };
                     } else {
+                        var color = colorFactory.getUnUsedColor(day.events, colorFactory.getAllDarkColors());
                         $scope.event = {
                             start : day.date,
                             end : day.date,
-                            time: new Date()
+                            time: new Date(),
+                            colors: colorFactory.getColors(color)
                         };
                     }
 
@@ -61,10 +62,9 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFacto
                         dp.opened = !dp.opened;
                     };
 
-                    $scope.create = function (){
-
+                    $scope.create = function (form){
+                        form.$setPristine();
                         eventsService.edit($scope.event).then(function (){
-                            console.log($scope.event);
                             if($scope.mode) {
                                 for(var i=day.events.length - 1; i>=0; i--){
                                     if(day.events[i].id == $scope.event.id){
@@ -78,6 +78,8 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, daysFacto
                             day.events = events;
                             $modalInstance.close();
 
+                        }).catch(function (){
+                            form.$setDirty();
                         });
                     };
 

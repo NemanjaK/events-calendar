@@ -38,23 +38,21 @@
     height: 19%;
     margin-bottom: 1%;
     float: left;
+    box-sizing: border-box;
+    border-left: 2px solid white;
 }
 
 .cal-event-sm {
-    background-color: limegreen;
     width: 20%;
 }
 
 .cal-event-md {
-    background-color: #CC0000;
     width: 40%;
 }
 
 .cal-event-lg {
-    background-color: hotpink;
     width: 80%;
 }
 .cal-event-xl {
-    background-color: orange;
     width: 100%;
 }
