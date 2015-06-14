@@ -24,14 +24,27 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, $location
 
     $scope.days = daysFactory.getDaysForMonth($scope.currentDay);
 
-    $scope.currentMonth = $scope.currentDay.getMonth();
+    $scope.currentMonthIndex = $scope.currentDay.getMonth();
+    $scope.monthIndex = $scope.currentMonthIndex;
+
+    $scope.months = monthFactory.getMonths();
+    $scope.currentMonth = $scope.months[$scope.currentMonthIndex];
 
     $scope.dp3 = {};
 
-    $scope.months = monthFactory.getMonths();
-
     $scope.move = function (dt) {
         $scope.currentDay = dateUtilFactory.move($scope.currentDay, dt);
+    };
+
+    $scope.moveToMonth = function (dm) {
+        if (dm < 0) {
+            $scope.monthIndex = $scope.monthIndex ? $scope.monthIndex - 1 : 11;
+        } else {
+            $scope.monthIndex = ($scope.monthIndex + 1 ) % 12;
+        }
+        console.log($scope.monthIndex);
+        $scope.currentMonth = $scope.months[$scope.monthIndex];
+
     };
 
     $scope.status = {
@@ -42,11 +55,11 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, $location
         $scope.currentDay = new Date();
     };
 
-    $scope.changeLanguage = function (lang){
+    $scope.changeLanguage = function (lang) {
         $location.path('/' + lang + '/' + dateUtilFactory.formatDate($scope.currentDay));
     };
 
-    $scope.changeMonth = function (month){
+    $scope.changeMonth = function (month) {
         $scope.currentDay.setMonth(month);
         $location.path('/' + lang + '/' + dateUtilFactory.formatDate($scope.currentDay));
     };
@@ -54,7 +67,7 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, $location
     $scope.$watch(function () {
         return $scope.currentDay;
     }, function (newValue) {
-        if(newValue) {
+        if (newValue) {
             $location.path('/' + lang + '/' + dateUtilFactory.formatDate($scope.currentDay));
         }
     });

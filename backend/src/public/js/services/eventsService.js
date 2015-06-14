@@ -12,7 +12,7 @@ cal.factory('eventsService', function ($http, $q, $timeout) {
 
             defer.resolve(data);
 
-        }, 2000);
+        }, 200);
 
         return defer.promise;
     };

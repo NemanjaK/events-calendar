@@ -9,6 +9,12 @@
     border-left: 1px solid #EEEEEE;
     border-top: 1px solid #EEEEEE;
 }
+
+.cal-body {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
 .cal-date {
     width: 14.285%;
     height: 16.66%;
@@ -73,6 +79,7 @@
 
 .cal-nav-dropdown {
     margin-left: 5px;
+    display: inline;
 }
 
 .cal-text {
@@ -101,4 +108,26 @@
 }
 .cal-event-xl {
     width: 100%;
+}
+
+@media (max-width: 970px) {
+    .cal-date {
+        width: 100%;
+        height: 200px;
+    }
+
+    .cal-calendar {
+        display: inline-block;
+        width: 100%;
+    }
+    .cal-body {
+        height: auto;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-bottom: 60px;
+        display: inline-block;
+    }
+
+
 }

@@ -34,26 +34,44 @@
             <datepicker data-ng-model="currentDay" show-weeks="false" data-ng-show="dp3.opened" class="well well-sm"  style="display: inline-block"></datepicker>
         </div>
     </div>
-    <div ng-repeat="day in days"
-         ng-click="openDialog($event, day)"
-         class="cal-date {{day.isCurrentMonth? '' : 'cal-not-current-month'}}">
-        <div class="cal-date-text">
-            <div>{{day.d}}</div>
-        </div>
-        <div ng-repeat="event in day.events"
-             ng-click="openDialog($event, day, event)"
-             class="cal-event"
-             cal-event=""
-             data-cal-attr-index="$index"
-             data-cal-attr-total="day.events.length"
-             data-ng-style="{'background-color': event.colors.light, 'border-color': event.colors.dark}">
+    <div class="cal-body">
+        <div ng-repeat="day in days"
+             ng-click="openDialog($event, day)"
+             class="cal-date {{day.isCurrentMonth? '' : 'cal-not-current-month hidden-sm hidden-xs'}}">
+            <div class="cal-date-text">
+                <div>{{day.d}}</div>
+            </div>
+            <div ng-repeat="event in day.events"
+                 ng-click="openDialog($event, day, event)"
+                 class="cal-event"
+                 cal-event=""
+                 data-cal-attr-index="$index"
+                 data-cal-attr-total="day.events.length"
+                 data-ng-style="{'background-color': event.colors.light, 'border-color': event.colors.dark}">
 
+            </div>
         </div>
     </div>
-    <div class="cal-footer">
+    <div class="cal-footer  hidden-sm hidden-xs">
         <div class="navbar-brand text-center">
-            <button type="button" ng-repeat="month in months" class="btn btn-md {{currentMonth == $index? 'btn-primary' : 'btn-default'}}" data-ng-click="changeMonth($index)" data-ng-cloak>
+            <button type="button" ng-repeat="month in months" class="btn btn-md {{currentMonthIndex == $index? 'btn-primary' : 'btn-default'}}" data-ng-click="changeMonth($index)" data-ng-cloak>
                 {{month | translate}}
+            </button>
+        </div>
+    </div>
+
+    <div class="cal-footer  hidden-md hidden-lg">
+        <div class="navbar-brand text-center">
+            <button type="button" class="btn btn-sm btn-default cal-text pull-left" data-ng-click="moveToMonth(-1)" data-ng-cloak>
+                <i class="glyphicon glyphicon-chevron-left"></i>
+            </button>
+
+            <button type="button" class="btn btn-sm {{currentMonthIndex == monthIndex? 'btn-primary' : 'btn-default'}}" data-ng-click="changeMonth(monthIndex)" data-ng-cloak>
+                {{currentMonth | translate}}
+            </button>
+
+            <button type="button" class="btn btn-sm btn-default cal-text pull-right" data-ng-click="moveToMonth(1)" data-ng-cloak>
+                <i class="glyphicon glyphicon-chevron-right"></i>
             </button>
         </div>
     </div>

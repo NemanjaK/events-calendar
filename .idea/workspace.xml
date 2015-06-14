@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f360a29-2355-4d26-b161-42c46c22b875" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/js/factory/monthFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/public/css/cal.css" afterPath="$PROJECT_DIR$/backend/src/public/css/cal.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/css/cal.css" afterPath="$PROJECT_DIR$/frontend/src/css/cal.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/public/js/ctrls/calendarCtrl.js" afterPath="$PROJECT_DIR$/backend/src/public/js/ctrls/calendarCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/js/ctrls/calendarCtrl.js" afterPath="$PROJECT_DIR$/frontend/src/js/ctrls/calendarCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/public/inline-templates/pages/calendarPage.html" afterPath="$PROJECT_DIR$/backend/src/public/inline-templates/pages/calendarPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/inline-templates/pages/calendarPage.html" afterPath="$PROJECT_DIR$/frontend/src/inline-templates/pages/calendarPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/public/js/dirs/eventDir.js" afterPath="$PROJECT_DIR$/backend/src/public/js/dirs/eventDir.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/js/dirs/eventDir.js" afterPath="$PROJECT_DIR$/frontend/src/js/dirs/eventDir.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/public/index.html" afterPath="$PROJECT_DIR$/backend/src/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/js/services/eventsService.js" afterPath="$PROJECT_DIR$/frontend/src/js/services/eventsService.js" />
     </list>
     <ignored path="event-calendar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="calendarPage.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="calendarPage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/inline-templates/pages/calendarPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.75" vertical-offset="120" max-vertical-offset="975">
-              <caret line="54" column="165" selection-start-line="54" selection-start-column="154" selection-end-line="54" selection-end-column="165" />
+            <state vertical-scroll-proportion="1.1313869" vertical-offset="0" max-vertical-offset="1245">
+              <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="47" />
               <folding>
                 <element signature="n#style#0;n#datepicker#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -49,21 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calendarCtrl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="calendarCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/js/ctrls/calendarCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.79787236" vertical-offset="75" max-vertical-offset="2115">
-              <caret line="50" column="87" selection-start-line="50" selection-start-column="87" selection-end-line="50" selection-end-column="87" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="eventDialog.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/inline-templates/dialogs/eventDialog.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="240" max-vertical-offset="1170">
-              <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2310">
+              <caret line="42" column="59" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -74,9 +57,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
               <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-              <folding>
-                <marker date="1434294226000" expanded="true" signature="40:443" placeholder="{...}" />
-              </folding>
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eventsService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/js/services/eventsService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,8 +75,8 @@
       <file leaf-file-name="cal.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/css/cal.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="699" max-vertical-offset="1635">
-              <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1209" max-vertical-offset="2070">
+              <caret line="123" column="21" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -120,7 +111,6 @@
         <option value="$PROJECT_DIR$/frontend/src/inline-templates/dialog/eventDialog.html" />
         <option value="$PROJECT_DIR$/frontend/build/Gruntfile.js" />
         <option value="$PROJECT_DIR$/frontend/src/js/factory/daysFactory.js" />
-        <option value="$PROJECT_DIR$/frontend/src/js/services/eventsService.js" />
         <option value="$PROJECT_DIR$/frontend/src/js/factory/colorFactory.js" />
         <option value="$PROJECT_DIR$/frontend/src/js/services/translationLoaderService.js" />
         <option value="$PROJECT_DIR$/frontend/src/inline-templates/dialogs/eventDialog.html" />
@@ -132,9 +122,10 @@
         <option value="$PROJECT_DIR$/frontend/src/css/bootstrap-fixes.css" />
         <option value="$PROJECT_DIR$/frontend/src/js/dirs/eventDir.js" />
         <option value="$PROJECT_DIR$/frontend/src/js/factory/monthFactory.js" />
+        <option value="$PROJECT_DIR$/frontend/src/js/services/eventsService.js" />
         <option value="$PROJECT_DIR$/frontend/src/css/cal.css" />
-        <option value="$PROJECT_DIR$/frontend/src/inline-templates/pages/calendarPage.html" />
         <option value="$PROJECT_DIR$/frontend/src/js/ctrls/calendarCtrl.js" />
+        <option value="$PROJECT_DIR$/frontend/src/inline-templates/pages/calendarPage.html" />
       </list>
     </option>
   </component>
@@ -247,6 +238,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="translations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="event-calendar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="event-calendar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -869,13 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/js/services/eventsService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/js/factory/daysFactory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1856">
@@ -959,8 +969,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/inline-templates/dialogs/eventDialog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="1170">
+        <state vertical-scroll-proportion="0.2919708" vertical-offset="0" max-vertical-offset="1170">
           <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/js/factory/monthFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -975,39 +993,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/js/factory/monthFactory.js">
+    <entry file="file://$PROJECT_DIR$/frontend/src/js/services/eventsService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-          <folding>
-            <marker date="1434294226000" expanded="true" signature="40:443" placeholder="{...}" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/css/cal.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="699" max-vertical-offset="1635">
-          <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1209" max-vertical-offset="2070">
+          <caret line="123" column="21" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/js/ctrls/calendarCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2310">
+          <caret line="42" column="59" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/inline-templates/pages/calendarPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.75" vertical-offset="120" max-vertical-offset="975">
-          <caret line="54" column="165" selection-start-line="54" selection-start-column="154" selection-end-line="54" selection-end-column="165" />
+        <state vertical-scroll-proportion="1.1313869" vertical-offset="0" max-vertical-offset="1245">
+          <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="47" />
           <folding>
             <element signature="n#style#0;n#datepicker#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/js/ctrls/calendarCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79787236" vertical-offset="75" max-vertical-offset="2115">
-          <caret line="50" column="87" selection-start-line="50" selection-start-column="87" selection-end-line="50" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
