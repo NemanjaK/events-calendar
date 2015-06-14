@@ -1,4 +1,4 @@
-cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, $location, dateUtilFactory, daysFactory, translationFactory, colorFactory, eventsService) {
+cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, $location, dateUtilFactory, daysFactory, translationFactory, colorFactory, monthFactory, eventsService) {
 
 
     console.log($routeParams);
@@ -24,7 +24,11 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, $location
 
     $scope.days = daysFactory.getDaysForMonth($scope.currentDay);
 
+    $scope.currentMonth = $scope.currentDay.getMonth();
+
     $scope.dp3 = {};
+
+    $scope.months = monthFactory.getMonths();
 
     $scope.move = function (dt) {
         $scope.currentDay = dateUtilFactory.move($scope.currentDay, dt);
@@ -39,6 +43,11 @@ cal.controller('calendarCtrl', function ($scope, $routeParams, $modal, $location
     };
 
     $scope.changeLanguage = function (lang){
+        $location.path('/' + lang + '/' + dateUtilFactory.formatDate($scope.currentDay));
+    };
+
+    $scope.changeMonth = function (month){
+        $scope.currentDay.setMonth(month);
         $location.path('/' + lang + '/' + dateUtilFactory.formatDate($scope.currentDay));
     };
 

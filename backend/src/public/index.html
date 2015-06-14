@@ -171,7 +171,13 @@ appointment
 
         </div>
     </div>
-    <div class="cal-footer"></div>
+    <div class="cal-footer">
+        <div class="navbar-brand text-center">
+            <button type="button" ng-repeat="month in months" class="btn btn-md {{currentMonth == $index? 'btn-primary' : 'btn-default'}}" data-ng-click="changeMonth($index)" data-ng-cloak>
+                {{month | translate}}
+            </button>
+        </div>
+    </div>
 </div>
 </script>
 <!-- End Templates -->
@@ -207,6 +213,7 @@ appointment
 <script src="js/factory/colorFactory.js"></script>
 <script src="js/factory/dateUtilFactory.js"></script>
 <script src="js/factory/daysFactory.js"></script>
+<script src="js/factory/monthFactory.js"></script>
 <script src="js/factory/translationFactory.js"></script>
 <script src="js/filters/dateConverterFilter.js"></script>
 <script src="js/interceptors/httpInterceptor.js"></script>

@@ -8,7 +8,7 @@ cal.directive('calEvent', function () {
         },
         link: function (scope, element, attrs) {
 
-            if(scope.calAttrTotal <= 5) {
+            if(scope.calAttrTotal < 5) {
                 if(scope.calAttrIndex ) {
                     element.addClass('cal-event').addClass('cal-event-xl');
                 } else {

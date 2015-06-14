@@ -65,6 +65,12 @@
     border-left: 2px solid white;
 }
 
+
+.cal-footer .navbar-brand .btn {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
 .cal-nav-dropdown {
     margin-left: 5px;
 }
