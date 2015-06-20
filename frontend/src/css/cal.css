@@ -68,9 +68,22 @@
     margin-bottom: 1%;
     float: left;
     box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
     border-left: 2px solid white;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+.cal-center-vertical-container {
+    display: table;
+    height: 100%;
+}
+
+.cal-center-vertical{
+    display: table-cell;
+    vertical-align: middle;
+}
 
 .cal-footer .navbar-brand .btn {
     margin-right: 5px;

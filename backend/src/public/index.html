@@ -174,7 +174,11 @@ appointment
                  data-cal-attr-index="$index"
                  data-cal-attr-total="day.events.length"
                  data-ng-style="{'background-color': event.colors.light, 'border-color': event.colors.dark}">
-
+                <div style="height: 100%; overflow: hidden;" ng-style="{'color': event.colors.dark}">
+                    <div class="cal-center-vertical-container">
+                        <div class="cal-center-vertical">{{event.title}}</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -211,7 +215,7 @@ appointment
     </div>
     <div class="modal-body">
         <div>{{event.start | date:'dd. MM. yyyy'}}</div>
-        <div>{{event.end | date:'dd. MM. yyyy'}}</div>
+        <div ng-if="event.start.getTime() != event.end.getTime()">{{event.end | date:'dd. MM. yyyy'}}</div>
         <div>{{event.time | date: 'h:mm a'}}</div>
         <div>{{event.desc}}</div>
 

@@ -4,7 +4,7 @@
     </div>
     <div class="modal-body">
         <div>{{event.start | date:'dd. MM. yyyy'}}</div>
-        <div>{{event.end | date:'dd. MM. yyyy'}}</div>
+        <div ng-if="event.start.getTime() != event.end.getTime()">{{event.end | date:'dd. MM. yyyy'}}</div>
         <div>{{event.time | date: 'h:mm a'}}</div>
         <div>{{event.desc}}</div>
 

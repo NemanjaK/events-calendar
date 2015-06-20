@@ -8,8 +8,6 @@ cal.directive('calPopover', function ($timeout, popoverFactory) {
 
     return {
         restrict: "A",
-        transclude: true,
-        template: '<div class=""></div>',
         link: function (scope, element, attrs) {
             var $element = $(element);
             var templateURL = attrs.calPopover;
