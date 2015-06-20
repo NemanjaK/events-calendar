@@ -1,0 +1,17 @@
+<div class="row modal-md" style="width:274px;">
+    <div class="modal-header">
+        <div>{{event.title}}</div>
+    </div>
+    <div class="modal-body">
+        <div>{{event.start | date:'dd. MM. yyyy'}}</div>
+        <div>{{event.end | date:'dd. MM. yyyy'}}</div>
+        <div>{{event.time | date: 'h:mm a'}}</div>
+        <div>{{event.desc}}</div>
+
+        <div></div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success pull-left" data-ng-click="$close(); openDialog($event, day, event)">{{ 'tt_edit'| translate }}</button>
+        <button class="btn btn-default" data-ng-click="remove()"><i class="glyphicon glyphicon-trash"></i></button>
+    </div>
+</div>

@@ -155,15 +155,20 @@ appointment
             <datepicker data-ng-model="currentDay" show-weeks="false" data-ng-show="dp3.opened" class="well well-sm"  style="display: inline-block"></datepicker>
         </div>
     </div>
-    <div class="cal-body">
+    <div class="cal-body"  class="cshd-id-appointment">
         <div ng-repeat="day in days"
+             ng-init="$position = $index<21? 'bottom' : 'top'"
              ng-click="openDialog($event, day)"
              class="cal-date {{day.isCurrentMonth? '' : 'cal-not-current-month hidden-sm hidden-xs'}}">
             <div class="cal-date-text">
                 <div>{{day.d}}</div>
             </div>
-            <div ng-repeat="event in day.events"
-                 ng-click="openDialog($event, day, event)"
+            <div type="button" ng-repeat="event in day.events"
+                 data-cal-popover="/inline-templates/popover/eventPopover.html"
+                 data-cshd-popover-view-port="html"
+                 data-toggle="popover"
+                 data-cal-popover-position="{{$position}}"
+                 ng-click="$event.stopPropagation();"
                  class="cal-event"
                  cal-event=""
                  data-cal-attr-index="$index"
@@ -198,6 +203,27 @@ appointment
     </div>
 </div>
 </script>
+
+<script type="text/ng-template" id="/inline-templates/popover/eventPopover.html">
+<div class="row modal-md" style="width:274px;">
+    <div class="modal-header">
+        <div>{{event.title}}</div>
+    </div>
+    <div class="modal-body">
+        <div>{{event.start | date:'dd. MM. yyyy'}}</div>
+        <div>{{event.end | date:'dd. MM. yyyy'}}</div>
+        <div>{{event.time | date: 'h:mm a'}}</div>
+        <div>{{event.desc}}</div>
+
+        <div></div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success pull-left" data-ng-click="$close(); openDialog($event, day, event)">{{ 'tt_edit'| translate }}</button>
+        <button class="btn btn-default" data-ng-click="remove()"><i class="glyphicon glyphicon-trash"></i></button>
+    </div>
+</div>
+
+</script>
 <!-- End Templates -->
 
 
@@ -228,10 +254,12 @@ appointment
 <script src="js/config/config.js"></script>
 <script src="js/ctrls/calendarCtrl.js"></script>
 <script src="js/dirs/eventDir.js"></script>
+<script src="js/dirs/popoverDir.js"></script>
 <script src="js/factory/colorFactory.js"></script>
 <script src="js/factory/dateUtilFactory.js"></script>
 <script src="js/factory/daysFactory.js"></script>
 <script src="js/factory/monthFactory.js"></script>
+<script src="js/factory/popoverFactory.js"></script>
 <script src="js/factory/translationFactory.js"></script>
 <script src="js/filters/dateConverterFilter.js"></script>
 <script src="js/interceptors/httpInterceptor.js"></script>
